@@ -33,8 +33,7 @@ bubbleSort(array){
 ```
 ### GIF Demo
 
-<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/bubble-sort/public/Images/Bubble-Sort.gif" />
-
+#### Demo 1
 <img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/bubble-sort/public/Images/Bubble-Sort-1.gif" />
 
 ---
