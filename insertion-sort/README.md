@@ -22,30 +22,22 @@
 ### Insertion Sort in JavaScript
 
 ```
-selectionSort(array){
-      let n = array.length;
-        
-    for(let i = 0; i < n; i++) {
-        // Finding the smallest number in the subarray
-        let min = i;
-        for(let j = i+1; j < n; j++){
-            if(array[j] < array[min]) {
-                min=j; 
-            }
-         }
-         if (min != i) {
-             // Swapping the elements
-             let tmp = array[i]; 
-             array[i] = array[min];
-             array[min] = tmp;      
-        }
+insertionSort(array){
+      for (let i = 1; i < array.length; i++) {
+    let currentValue = array[i]
+    let j
+    for (j = i - 1; j >= 0 && array[j] > currentValue; j--) {
+      array[j + 1] = array[j]
     }
+    array[j + 1] = currentValue
+  }
       return array;
     }
 ```
 ### GIF Demo
 
 #### Demo 1
+
 <img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/insertion-sort/public/Images/Insertion-Sort-1.gif" />
 
 ---
