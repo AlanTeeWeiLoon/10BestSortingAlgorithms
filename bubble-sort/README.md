@@ -34,9 +34,6 @@ bubbleSort(array){
 ### GIF Demo
 
 #### Demo 1
-<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/bubble-sort/public/Images/Bubble-Sort.gif" />
-
-#### Demo 2
 <img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/bubble-sort/public/Images/Bubble-Sort-1.gif" />
 
 ---
