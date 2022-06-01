@@ -1,15 +1,5 @@
 # bubble-sort
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
 ### Bubble Sort in JavaScript
 
 ```
@@ -25,4 +15,17 @@ bubbleSort(array){
       }
       return array；
 }
+```
+
+<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/bubble-sort/public/Images/Bubble-Sort.gif" />
+
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
 ```
