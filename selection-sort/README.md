@@ -1,5 +1,33 @@
 # selection-sort
 
+### Selection Sort in JavaScript
+
+```
+selectionSort(array){
+      let n = array.length;
+        
+    for(let i = 0; i < n; i++) {
+        // Finding the smallest number in the subarray
+        let min = i;
+        for(let j = i+1; j < n; j++){
+            if(array[j] < array[min]) {
+                min=j; 
+            }
+         }
+         if (min != i) {
+             // Swapping the elements
+             let tmp = array[i]; 
+             array[i] = array[min];
+             array[min] = tmp;      
+        }
+    }
+      return array;
+    }
+```
+
+<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/selection-sort/public/Images/Selection-Sort.gif" />
+
+
 ## Project setup
 ```
 npm install
@@ -9,16 +37,3 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
