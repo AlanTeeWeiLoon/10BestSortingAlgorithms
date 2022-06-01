@@ -43,7 +43,6 @@ export default {
           if(arr.indexOf(r) === -1) arr.push(r);
       }
       this.data.arrNum=arr;
-      console.log("123",this.data.arrNum)
     },
 
     bubbleSort(array){
