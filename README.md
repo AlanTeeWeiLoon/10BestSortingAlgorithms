@@ -4,7 +4,7 @@
 
 ## 2. [Selection Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/selection-sort)
 
-## 2. [Insertion Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/insertion-sort)
+## 3. [Insertion Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/insertion-sort)
 
-## 2. [Shell Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/shell-sort)
+## 4. [Shell Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/shell-sort)
 
