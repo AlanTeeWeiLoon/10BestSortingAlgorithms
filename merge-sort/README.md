@@ -1,5 +1,56 @@
 # merge-sort
 
+### Algorithm Description
+- 
+
+### Properties
+- 
+
+---
+
+### Merge Sort in JavaScript
+
+```
+function mergeSort(arr) {
+      if (arr.length <= 1) return arr;
+
+      let mid = Math.floor(arr.length / 2);
+      let left = mergeSort(arr.slice(0, mid));
+      let right = mergeSort(arr.slice(mid));
+      return merge(left, right);
+    },
+
+    function merge(arr1, arr2) {
+      let i = 0;
+      let j = 0;
+      let results = [];
+      while (i < arr1.length && j < arr2.length) {
+        if (arr2[j] > arr1[i]) {
+          results.push(arr1[i]);
+          i++;
+        } else {
+          results.push(arr2[j]);
+          j++;
+        }
+      }
+      while (i < arr1.length) {
+        results.push(arr1[i]);
+        i++;
+      }
+      while (j < arr2.length) {
+        results.push(arr2[j]);
+        j++;
+      }
+      return results;
+    },
+```
+### GIF Demo
+
+#### Demo 1
+<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/selection-sort/public/Images/Merge-Sort.gif" />
+
+---
+
 ## Project setup
 ```
 npm install
@@ -10,15 +61,4 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
