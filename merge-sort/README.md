@@ -52,7 +52,7 @@ function mergeSort(arr) {
 ### GIF Demo
 
 #### Demo 1
-<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/selection-sort/public/Images/Merge-Sort.gif" />
+<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/merge-sort/public/Images/merge-sort.gif" />
 
 ---
 
