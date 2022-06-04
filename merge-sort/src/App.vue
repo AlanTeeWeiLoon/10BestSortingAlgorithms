@@ -8,8 +8,8 @@
       <table class="center">
         <tr>
           <td
-            v-for="num in data.arrNum"
-            v-bind:key="num"
+            v-for="(num, i) in data.arrNum"
+            v-bind:key="i"
             style="width: 2em; font-size: x-large; font-weight: bold"
           >
             {{ num }}
@@ -46,47 +46,42 @@ export default {
       this.data.arrNum = arr;
     },
 
-     mergeSort(arr) {
-      if (arr.length <= 1){
+    mergeSort(arr) {
+      if (arr.length <= 1) {
         this.data.arrNum = arr;
-      } 
-
+      }
+      console.log("arr", arr);
       let mid = Math.floor(arr.length / 2);
       let left = arr.slice(0, mid);
-      console.log("left",left)
+      console.log("left", left);
       let right = arr.slice(mid);
-      console.log("right",right)
-
+      console.log("right", right);
 
       this.merge(left, right);
     },
 
-     merge(arr1, arr2) {
-      let i = 0;
-      let j = 0;
-      let results = [];
-      while (i < arr1.length && j < arr2.length) {
-        if (arr2[j] > arr1[i]) {
-          results.push(arr1[i]);
-          i++;
+    merge: function (left, right) {
+      var leftIndex = 0;
+      var rightIndex = 0;
+      var results = [];
+
+      while (leftIndex < left.length && rightIndex < right.length) {
+
+        if (left[leftIndex] < right[rightIndex]) {
+          results.push(left[leftIndex]);
+          leftIndex++    
         } else {
-          results.push(arr2[j]);
-          j++;
+          results.push(right[rightIndex]);
+          rightIndex++; 
         }
       }
-      console.log("results",results)
-      while (i < arr1.length) {
-        results.push(arr1[i]);
-        i++;
-      }
-      console.log("results1",results)
-      while (j < arr2.length) {
-        results.push(arr2[j]);
-        j++;
-      }
+
+      results = results
+        .concat(left.slice(leftIndex))
+        .concat(right.slice(rightIndex));
       this.data.arrNum = results;
     },
-  },
+  }
 };
 </script>
 
