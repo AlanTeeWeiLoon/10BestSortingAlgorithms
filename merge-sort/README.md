@@ -1,10 +1,15 @@
 # merge-sort
 
 ### Algorithm Description
-- 
+- Divide the input sequence of length n into two subsequences of length n/2;
+- Merge sort is used for these two subsequences respectively;
+- Merge the two sorted subsequences into a final sorted sequence.
 
 ### Properties
-- 
+- Space Complexity: O(n)
+- Time Complexity: O(n*log(n))
+- Stable: Yes
+- Parallelizable :yes 
 
 ---
 
@@ -47,7 +52,7 @@ function mergeSort(arr) {
 ### GIF Demo
 
 #### Demo 1
-<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/selection-sort/public/Images/Merge-Sort.gif" />
+<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/merge-sort/public/Images/merge-sort.gif" />
 
 ---
 
