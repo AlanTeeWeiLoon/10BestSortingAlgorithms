@@ -46,27 +46,65 @@ export default {
       this.data.arrNum = arr;
     },
 
-    heapSort(array) {
-      let n = array.length;
+    buildMaxHeap(arr) {
+      let i = Math.floor(arr.length / 2 - 1);
 
-      //Start with a really large gap, and then reduce the gap until there isn't any
-      //With this, the gap starts as half of the array length, and then half of that every time
-      for (let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
-        //Do a insertion sort for each of the section the gap ends up dividing
-        for (let i = gap; i < n; i += 1) {
-          //We store the current varible
-          let temp = array[i];
-
-          //This is the insection sort to sort the section into order
-          let j;
-          for (j = i; j >= gap && array[j - gap] > temp; j -= gap) {
-            array[j] = array[j - gap];
-          }
-
-          array[j] = temp;
-        }
+      while (i >= 0) {
+        this.heapify(arr, i, arr.length);
+        i -= 1;
       }
-      this.data.arrNum = array;
+    },
+
+    heapify(heap, i, max) {
+      let index;
+      let leftChild;
+      let rightChild;
+
+      while (i < max) {
+        index = i;
+
+        leftChild = 2 * i + 1;
+
+        rightChild = leftChild + 1;
+
+        if (leftChild < max && heap[leftChild] > heap[index]) {
+          index = leftChild;
+        }
+
+        if (rightChild < max && heap[rightChild] > heap[index]) {
+          index = rightChild;
+        }
+
+        if (index === i) {
+          return;
+        }
+
+        this.swap(heap, i, index);
+
+        i = index;
+      }
+    },
+
+    swap(arr, firstItemIndex, lastItemIndex) {
+      const temp = arr[firstItemIndex];
+
+      arr[firstItemIndex] = arr[lastItemIndex];
+      arr[lastItemIndex] = temp;
+    },
+
+    heapSort(arr) {
+      setTimeout(() => {
+        this.buildMaxHeap(arr);
+
+        let lastElement = arr.length - 1;
+
+        while (lastElement > 0) {
+          this.swap(arr, 0, lastElement);
+          this.heapify(arr, 0, lastElement);
+          lastElement -= 1;
+        }
+      }, 200);
+      this.data.arrNum = arr;
     },
   },
 };

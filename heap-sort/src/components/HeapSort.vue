@@ -1,15 +1,12 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    
     <p>
-      Shell sort is an optimized version of Insertion sort.
+      Heap sort is a comparison-based sorting technique based on Binary Heap data structure. 
     </p>
     <p>
-      It differs from insertion sort in that it prioritizes elements that are farther apart. Shell sorting is also called shrinking incremental sorting.
-    </p>
-    
-    
+      It is similar to selection sort where we first find the minimum element and place the minimum element at the beginning. 
+    </p> 
   </div>
 </template>
 
@@ -19,12 +16,7 @@ export default {
   props: {
     msg: String
   },
-  
-
-  
 }
-
-
 </script>
 
 <style scoped>
