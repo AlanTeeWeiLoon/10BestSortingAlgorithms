@@ -8,7 +8,7 @@
       <table class="center">
         <tr>
           <td
-            v-for="num in data.arrNum"
+            v-for="num in nodes"
             v-bind:key="num"
             style="width: 2em; font-size: x-large; font-weight: bold"
           >
@@ -17,7 +17,7 @@
         </tr>
       </table>
     </div>
-    <button @click="quickSort(data.arrNum)">Click for Quick Sort</button>
+    <button @click="quickSort()">Click for Quick Sort</button>
   </div>
 </template>
 
@@ -31,9 +31,10 @@ export default {
   },
   data() {
     return {
-      data: {
-        arrNum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      },
+      nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      delay: 200,
+      lowerRange: 0,
+      upperRange: 0,
     };
   },
   methods: {
@@ -43,29 +44,46 @@ export default {
         var r = Math.floor(Math.random() * 100) + 1;
         if (arr.indexOf(r) === -1) arr.push(r);
       }
-      this.data.arrNum = arr;
+      this.nodes = arr;
     },
+    comparer: (a, b) => a < b,
+    quickSort(i = null, j = null) {
+      setTimeout(() => {
+        if (i === null) i = 0;
+        if (j === null) j = this.nodes.length - 1;
 
-    QuickSort(array) {
-      if(array.length <= 1){
-   this.data.arrNum = array;
-  }
+        this.lowerRange = i;
+        this.upperRange = j;
 
-  const pivot = array[array.length - 1];
-  const leftArr = [];
-  const rightArr = [];
+        if (i >= j) {
+          return;
+        }
 
-  for(let i=0; i < array.length-1;i++){
-    if(array[i] < pivot){
-      leftArr.push(array[i]);
-    }
-    else{
-      rightArr.push(array[i])
-    }
-  }
+        const pivot = this.partition(i, j);
+        this.quickSort(i, pivot - 1);
+        this.quickSort(pivot + 1, j);
+      }, this.delay);
 
-  this.data.arrNum =  [...QuickSort(leftArr) ,pivot,...QuickSort(rightArr)];
-      this.data.arrNum = array;
+    },
+    partition(min, max) {
+      const pivot = max;
+      let wall = min;
+      for (let i = wall; i <= max; i++) {
+        if (this.comparer(this.nodes[i], this.nodes[pivot])) {
+          this.swap(i, wall);
+          wall++;
+        }
+      }
+      
+
+      this.swap(wall, pivot);
+      return wall;
+    },
+    swap(from, to) {
+      const tmp = this.nodes[from];
+      this.nodes[from] = this.nodes[to];
+      this.nodes[to] = tmp;
+
     },
   },
 };
