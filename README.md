@@ -8,3 +8,7 @@
 
 ## 4. [Shell Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/shell-sort)
 
+## 5. [Merge Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/merge-sort)
+
+## 6. [Quick Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/quick-sort)
+
