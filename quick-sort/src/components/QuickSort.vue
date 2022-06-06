@@ -3,10 +3,10 @@
     <h1>{{ msg }}</h1>
     
     <p>
-      Shell sort is an optimized version of Insertion sort.
+      Quicksort is a popular sorting algorithm that is often faster in practice compared to other sorting algorithms. 
     </p>
     <p>
-      It differs from insertion sort in that it prioritizes elements that are farther apart. Shell sorting is also called shrinking incremental sorting.
+      It utilizes a divide-and-conquer strategy to quickly sort data items by dividing a large array into two smaller arrays. 
     </p>
     
     
@@ -19,11 +19,7 @@ export default {
   props: {
     msg: String
   },
-  
-
-  
 }
-
 
 </script>
 
