@@ -12,3 +12,7 @@
 
 ## 6. [Quick Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/quick-sort)
 
+## 7. [Heap Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/heap-sort)
+
+## 8. [Counting Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/counting-sort)
+
