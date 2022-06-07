@@ -59,7 +59,7 @@ countingSort(inputArr, n = inputArr.length) {
 
 #### Demo 1
 
-<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/counting-sort/public/Images/Coounting-Sort.gif" />
+<img src="https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/blob/main/counting-sort/public/Images/Counting-Sort.gif" />
 
 ---
 
