@@ -3,10 +3,10 @@
     <h1>{{ msg }}</h1>
     
     <p>
-      Counting sort is an optimized version of Insertion sort.
+      Counting sort is a sorting technique based on keys between a specific range. 
     </p>
     <p>
-      It differs from insertion sort in that it prioritizes elements that are farther apart. Shell sorting is also called shrinking incremental sorting.
+      It works by counting the number of objects having distinct key values (kind of hashing). Then do some arithmetic to calculate the position of each object in the output sequence. 
     </p>
     
     

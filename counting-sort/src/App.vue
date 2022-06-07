@@ -46,27 +46,39 @@ export default {
       this.data.arrNum = arr;
     },
 
-    countingSort(array) {
-      let n = array.length;
+    countingSort(inputArr, n = inputArr.length) {
+      let k = Math.max(...inputArr);
+      let t;
+      //Create a temporary with 0 zero value
+      //as the same length of max elemet + 1
+      const temp = new Array(k + 1).fill(0);
 
-      //Start with a really large gap, and then reduce the gap until there isn't any
-      //With this, the gap starts as half of the array length, and then half of that every time
-      for (let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
-        //Do a insertion sort for each of the section the gap ends up dividing
-        for (let i = gap; i < n; i += 1) {
-          //We store the current varible
-          let temp = array[i];
-
-          //This is the insection sort to sort the section into order
-          let j;
-          for (j = i; j >= gap && array[j - gap] > temp; j -= gap) {
-            array[j] = array[j - gap];
-          }
-
-          array[j] = temp;
-        }
+      //Count the frequency of each element in the original array
+      //And store it in temp array
+      for (let i = 0; i < n; i++) {
+        t = inputArr[i];
+        temp[t]++;
       }
-      this.data.arrNum = array;
+
+      //Update the count based on the previous index
+      for (let i = 1; i <= k; i++) {
+        // Updating elements of count array
+        temp[i] = temp[i] + temp[i - 1];
+      }
+
+      //Output arr
+      const outputArr = new Array(n).fill(0);
+
+      for (let i = n - 1; i >= 0; i--) {
+        // Add elements of array A to array B
+        t = inputArr[i];
+        outputArr[temp[t] - 1] = t;
+
+        // Decrement the count value by 1
+        temp[t] = temp[t] - 1;
+      }
+
+      this.data.arrNum = outputArr;
     },
   },
 };
