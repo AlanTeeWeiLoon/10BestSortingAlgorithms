@@ -46,28 +46,55 @@ export default {
       this.data.arrNum = arr;
     },
 
-    bucketSort(array) {
-      let n = array.length;
+    
 
-      //Start with a really large gap, and then reduce the gap until there isn't any
-      //With this, the gap starts as half of the array length, and then half of that every time
-      for (let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
-        //Do a insertion sort for each of the section the gap ends up dividing
-        for (let i = gap; i < n; i += 1) {
-          //We store the current varible
-          let temp = array[i];
-
-          //This is the insection sort to sort the section into order
-          let j;
-          for (j = i; j >= gap && array[j - gap] > temp; j -= gap) {
-            array[j] = array[j - gap];
-          }
-
-          array[j] = temp;
-        }
+    bucketSort(arr){
+      setTimeout(() => {
+   if (arr.length === 0) {
+      return arr;
+   }
+   let i,
+   minValue = arr[0],
+   maxValue = arr[0],
+   bucketSize = 5;
+   arr.forEach(function (currentVal) {
+      if (currentVal < minValue) {
+         minValue = currentVal;
+      } else if (currentVal > maxValue) {
+         maxValue = currentVal;
       }
-      this.data.arrNum = array;
-    },
+   })
+   let bucketCount = Math.floor((maxValue - minValue) / bucketSize) + 1;
+   let allBuckets = new Array(bucketCount);
+   for (i = 0; i < allBuckets.length; i++) {
+      allBuckets[i] = [];
+   }
+   arr.forEach(function (currentVal) {
+      allBuckets[Math.floor((currentVal - minValue) / bucketSize)].push(currentVal);
+   });
+   arr.length = 0;
+   allBuckets.forEach(function(bucket) {
+      this.insertion(bucket);
+      bucket.forEach(function (element) {
+         arr.push(element)
+         console.log("!@3",arr)
+      });
+   });
+   }, 200);
+   this.data.arrNum = arr;
+},
+ insertion(arr) {
+   let length = arr.length;
+   let i, j;
+   for(i = 1; i < length; i++) {
+      let temp = arr[i];
+      for(j = i - 1; j >= 0 && arr[j] > temp; j--) {
+         arr[j+1] = arr[j];
+      }
+      arr[j+1] = temp;
+   }
+   return arr;
+},
   },
 };
 </script>
