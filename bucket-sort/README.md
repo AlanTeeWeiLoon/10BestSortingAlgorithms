@@ -13,7 +13,8 @@
 - Worst Case: O(n2)
 - Stable: Yes
 
-**k is the number of buckets
+** k is the number of buckets
+
 ---
 
 ### Bucket Sort in JavaScript
