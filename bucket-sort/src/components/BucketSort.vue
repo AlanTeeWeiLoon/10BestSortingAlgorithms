@@ -3,10 +3,13 @@
     <h1>{{ msg }}</h1>
     
     <p>
-      Bucket sort is an optimized version of Insertion sort.
+      Bucket sort is a comparison sort algorithm that operates on elements by dividing them into different buckets and then sorting these buckets individually. 
     </p>
     <p>
-      It differs from insertion sort in that it prioritizes elements that are farther apart. Shell sorting is also called shrinking incremental sorting.
+      Each bucket is sorted individually using a separate sorting algorithm like insertion sort, or by applying the bucket sort algorithm recursively.
+    </p>
+    <p>
+      Bucket sort is mainly useful when the input is uniformly distributed over a range.
     </p>
     
     
@@ -19,9 +22,6 @@ export default {
   props: {
     msg: String
   },
-  
-
-  
 }
 
 
