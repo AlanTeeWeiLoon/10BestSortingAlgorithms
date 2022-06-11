@@ -13,11 +13,13 @@
             style="width: 2em; font-size: x-large; font-weight: bold"
           >
             {{ num }}
+            {{ mergeSort }}
           </td>
         </tr>
       </table>
     </div>
     <button @click="mergeSort(data.arrNum)">Click for Merge Sort</button>
+    
   </div>
 </template>
 
@@ -36,34 +38,27 @@ export default {
       },
     };
   },
-  methods: {
-    randomNum() {
-      var arr = [];
-      while (arr.length < 10) {
-        var r = Math.floor(Math.random() * 100) + 1;
-        if (arr.indexOf(r) === -1) arr.push(r);
-      }
-      this.data.arrNum = arr;
-    },
-
+  computed:{
     mergeSort(arr) {
       if (arr.length <= 1) {
-        this.data.arrNum = arr;
+        return arr;
       }
       console.log("arr", arr);
       let mid = Math.floor(arr.length / 2);
       let left = arr.slice(0, mid);
-      console.log("left", left);
       let right = arr.slice(mid);
-      console.log("right", right);
 
-      this.merge(left, right);
+       return this.merge(this.mergeSort(left), this.mergeSort(right));
     },
 
-    merge: function (left, right) {
+    merge(left, right) {
+      console.log("left",left)
+      console.log("right",right)
+      var results = [];
+      setTimeout(() => {
       var leftIndex = 0;
       var rightIndex = 0;
-      var results = [];
+      
 
       while (leftIndex < left.length && rightIndex < right.length) {
 
@@ -79,8 +74,22 @@ export default {
       results = results
         .concat(left.slice(leftIndex))
         .concat(right.slice(rightIndex));
-      this.data.arrNum = results;
+        console.log("results",results)
+        }, 200);
+      return results;
     },
+  },
+  methods: {
+    randomNum() {
+      var arr = [];
+      while (arr.length < 10) {
+        var r = Math.floor(Math.random() * 100) + 1;
+        if (arr.indexOf(r) === -1) arr.push(r);
+      }
+      this.data.arrNum = arr;
+    },
+
+    
   }
 };
 </script>
