@@ -20,13 +20,15 @@
 
 ## 10. [Counting Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/radix-sort)
 
+---
+
 # Others Resources of Sorting Algorithms
 
-[知乎](https://zhuanlan.zhihu.com/p/41923298)
+⚡ [知乎](https://zhuanlan.zhihu.com/p/41923298)
 
-[CRIO.DO](https://www.crio.do/blog/top-10-sorting-algorithms/)
+⚡ [CRIO.DO](https://www.crio.do/blog/top-10-sorting-algorithms/)
 
-[freeCodeCamp](https://www.freecodecamp.org/news/sorting-algorithms-explained-with-examples-in-python-java-and-c/)
+⚡ [freeCodeCamp](https://www.freecodecamp.org/news/sorting-algorithms-explained-with-examples-in-python-java-and-c/)
 
-[SCF.USC.edu](http://www-scf.usc.edu/~zhan468/public/Notes/sorting.html)
+⚡ [SCF.USC.edu](http://www-scf.usc.edu/~zhan468/public/Notes/sorting.html)
 
