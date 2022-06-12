@@ -16,9 +16,9 @@
 
 ## 8. [Counting Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/counting-sort)
 
-## 9. [Counting Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/bucket-sort)
+## 9. [Bucket Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/bucket-sort)
 
-## 10. [Counting Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/radix-sort)
+## 10. [Radix Sort](https://github.com/AlanTeeWeiLoon/10BestSortingAlgorithms/tree/main/radix-sort)
 
 ---
 
