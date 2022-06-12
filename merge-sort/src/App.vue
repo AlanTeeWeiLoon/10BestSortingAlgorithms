@@ -13,7 +13,6 @@
             style="width: 2em; font-size: x-large; font-weight: bold"
           >
             {{ num }}
-            {{ mergeSort }}
           </td>
         </tr>
       </table>
@@ -35,49 +34,9 @@ export default {
     return {
       data: {
         arrNum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        resultArray:[]
       },
     };
-  },
-  computed:{
-    mergeSort(arr) {
-      if (arr.length <= 1) {
-        return arr;
-      }
-      console.log("arr", arr);
-      let mid = Math.floor(arr.length / 2);
-      let left = arr.slice(0, mid);
-      let right = arr.slice(mid);
-
-       return this.merge(this.mergeSort(left), this.mergeSort(right));
-    },
-
-    merge(left, right) {
-      console.log("left",left)
-      console.log("right",right)
-      var results = [];
-      setTimeout(() => {
-      var leftIndex = 0;
-      var rightIndex = 0;
-      
-
-      while (leftIndex < left.length && rightIndex < right.length) {
-
-        if (left[leftIndex] < right[rightIndex]) {
-          results.push(left[leftIndex]);
-          leftIndex++    
-        } else {
-          results.push(right[rightIndex]);
-          rightIndex++; 
-        }
-      }
-
-      results = results
-        .concat(left.slice(leftIndex))
-        .concat(right.slice(rightIndex));
-        console.log("results",results)
-        }, 200);
-      return results;
-    },
   },
   methods: {
     randomNum() {
@@ -88,6 +47,42 @@ export default {
       }
       this.data.arrNum = arr;
     },
+
+    mergeSort(arr) {
+				this.data.arrNum = this.runMergeSort(arr);
+			},
+			runMergeSort(input) {
+				if (input.length <= 1) return input;
+				// divide Array in half, figure out middle
+				const middle = Math.floor(input.length / 2);
+				// divide array into left and right
+				const left = input.slice(0, middle);
+				const right = input.slice(middle);
+				return this.merge(this.runMergeSort(left), this.runMergeSort(right));
+			},
+			merge(left, right) {
+				const resultArray = [];
+				let leftIndex = 0;
+				let rightIndex = 0;
+				while (leftIndex < left.length && rightIndex < right.length) {
+					const leftEl = left[leftIndex];
+					const rightEl = right[rightIndex];
+					if (leftEl.value < rightEl.value) {
+						resultArray.push(leftEl);
+            this.data.resultArray.push(leftEl);
+						leftIndex++;
+					} else {
+						resultArray.push(rightEl);
+            this.data.resultArray.push(rightEl);
+						rightIndex++;
+					}
+				}
+				return [
+					...resultArray,
+					...left.slice(leftIndex),
+					...right.slice(rightIndex),
+				];
+			},
 
     
   }
